@@ -17,16 +17,6 @@ namespace SalleIntro.Endgame
         private bool _isGoodEnd;
         private float _time = 1f;
 
-        private void OnEnable()
-        {
-            GameEvents.OnEnd += OpenDoor;
-        }
-
-        private void OnDisable()
-        {
-            GameEvents.OnEnd -= OpenDoor;
-        }
-
         private void Awake()
         {
             _goodDoorAnimator = _goodEndDoor.GetComponent<Animator>();
@@ -42,24 +32,6 @@ namespace SalleIntro.Endgame
                 GameEvents.OnDoorOpened?.Invoke(_isGoodEnd);
             }
         }
-
-        private void OpenDoor(bool isGoodEnd)
-        {
-            _isGoodEnd = isGoodEnd;
-            if (isGoodEnd)
-            {
-                _badEndDoor.SetActive(false);
-                _goodEndDoor.SetActive(true);
-                _goodDoorAnimator.SetBool(IsFrontOpen, true);
-            }
-            else
-            {
-                _goodEndDoor.SetActive(false);
-                _badEndDoor.SetActive(true);
-                _badDoorAnimator.SetBool(IsFrontOpen, true);
-            }
-
-            _isTimerOn = true;
-        }
+        
     }
 }

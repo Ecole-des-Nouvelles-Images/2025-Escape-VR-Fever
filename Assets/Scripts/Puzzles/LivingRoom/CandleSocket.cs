@@ -23,6 +23,7 @@ namespace Puzzles.LivingRoom
             {
                 _myCandle = other.gameObject;
                 _myCandle.transform.parent = transform;
+                _myCandle.transform.rotation = transform.rotation;
                 RefreshCandle();
                 _myPuzzle.AddValueInCode(_myCandle.GetComponent<Candle>().MyValue,_myIndexInCode);
             }
