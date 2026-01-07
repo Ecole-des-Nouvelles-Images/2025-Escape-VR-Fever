@@ -122,8 +122,7 @@ namespace SalleIntro
         private void Ending()
         {
             //_dialogManager.PlayDialogue("14");
-            SceneManager.LoadScene("CreditsBadEnd");
-            //GameEvents.OnEndGame.Invoke();
+            GameEvents.OnEndGame.Invoke();
         }
     }
 }

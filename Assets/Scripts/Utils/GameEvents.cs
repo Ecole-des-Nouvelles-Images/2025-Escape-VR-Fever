@@ -10,6 +10,7 @@
 
         public static Action OnIncreaseScore;
         public static Action OnEndGame;
+        public static Action OnGoodEndValidate;
         public static Action OnEnableFarInteractor;
         public static Action OnDisableFarInteractor;
         public static Action OnOpenDrawer;
